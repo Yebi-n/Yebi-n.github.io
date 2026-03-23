@@ -688,11 +688,25 @@ TEL: +82 10-7189-6376</p>
     });
   }
 
-  window.addEventListener('scroll', triggerFadeIn, { passive:true });
+window.addEventListener('scroll', triggerFadeIn, { passive:true });
   window.addEventListener('load', () => {
     document.querySelectorAll('#panel-uiux .fade-in').forEach(el => el.classList.add('visible'));
     triggerFadeIn();
   });
 </script>
+
+<style>
+  img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+  }
+</style>
+<script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+</script>
+
 </body>
 </html>

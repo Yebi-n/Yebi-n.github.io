@@ -249,8 +249,7 @@
 <header>
   <div class="logo"><img decoding="async" src="assets/09aa3eb1b070a6dbd9ba344c8850410fb7726bde.png" alt="Yebin." /></div>
   <nav>
-    <div class="nav-item active" onclick="showHome(this)">Home</div>
-    <div class="nav-item" onclick="switchTab('uiux',this)">UI/UX</div>
+    <div class="nav-item active" onclick="switchTab('uiux',this)">UI/UX</div>
     <div class="nav-item" onclick="switchTab('art',this)">Art</div>
     <div class="nav-item" onclick="switchTab('business',this)">Business</div>
     <div class="nav-item" onclick="switchTab('marketing',this)">Marketing &amp; Film</div>
@@ -661,7 +660,7 @@ TEL: +82 10-7189-6376</p>
 </section>
 
 <script>
-  const NAV_MAP = { uiux:1, art:2, business:3, marketing:4, rnd:5 };
+  const NAV_MAP = { uiux:0, art:1, business:2, marketing:3, rnd:4 };
 
   function switchTab(tabId, navEl, tabLinkEl) {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -676,13 +675,10 @@ TEL: +82 10-7189-6376</p>
       if (NAV_MAP[tabId] !== undefined) items[NAV_MAP[tabId]].classList.add('active');
     }
     document.getElementById('projects').scrollIntoView({ behavior:'smooth', block:'start' });
-    setTimeout(triggerFadeIn, 100);
-  }
-
-  function showHome(navEl) {
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    navEl.classList.add('active');
-    window.scrollTo({ top:0, behavior:'smooth' });
+    setTimeout(() => {
+      document.querySelectorAll('#panel-' + tabId + ' .fade-in').forEach(el => el.classList.add('visible'));
+      triggerFadeIn();
+    }, 100);
   }
 
   function triggerFadeIn() {
@@ -693,7 +689,10 @@ TEL: +82 10-7189-6376</p>
   }
 
   window.addEventListener('scroll', triggerFadeIn, { passive:true });
-  window.addEventListener('load', triggerFadeIn);
+  window.addEventListener('load', () => {
+    document.querySelectorAll('#panel-uiux .fade-in').forEach(el => el.classList.add('visible'));
+    triggerFadeIn();
+  });
 </script>
 </body>
 </html>

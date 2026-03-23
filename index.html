@@ -231,6 +231,16 @@
       .proj-detail { font-size: 16px; white-space: normal; }
       .art-grid img { height: 130px; }
     }
+
+    /* 모바일(터치) 행간 */
+    @media (hover: none) and (pointer: coarse) {
+      body { line-height: 2.2; }
+      .about-text { line-height: 68px; }
+      .proj-title { line-height: 64px; }
+      .proj-detail p { line-height: 2.2; }
+      .awards-text p { line-height: 2.2; }
+      .contact-text { line-height: 56px; }
+    }
   </style>
 </head>
 <body>
@@ -275,10 +285,10 @@
   </div>
   <div class="social-row">
     <img src="assets/5dce0b1372e457a5856e41bf3b53b8bef05bd6fd.png" alt="" />
-    <img src="assets/2cd17fa6e4c412899ee5997ab4e1d6322e575519.png" alt="" />
+    <img src="assets/2cd17fa6e4c412899ee5997ab4e1d6322e575519.png" alt="" style="border-radius:14px;" />
     <img src="assets/2c1014d920ae89cf1ad90bccaabd9fac5d174a02.png" alt="" />
     <img src="assets/ba02f4d8d1f768bb41613315a64ea9ca4d83217e.png" alt="" />
-    <img src="assets/d0f7fa7ef7e8f5b6cd549053994e21b99307d7f3.png" alt="" />
+    <img src="assets/d0f7fa7ef7e8f5b6cd549053994e21b99307d7f3.png" alt="" style="border-radius:14px;" />
     <img src="assets/87939a6853aeeeb94184984180212b6ad9bf4a64.png" alt="" />
   </div>
 </section>
@@ -634,7 +644,7 @@
   </div><!-- /panel-marketing -->
 
   <!-- ════ R&D (⑥ 원본대로 빈 화면) ════ -->
-  <div class="tab-panel" id="panel-rnd"></div>
+  <div class="tab-panel" id="panel-rnd" style="min-height:600px;"></div>
 
 </section>
 
